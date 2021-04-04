@@ -1,0 +1,10 @@
+name: app-1
+title:
+username:
+account: bdjacques
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 3907956
+bundleId: 4430105
+url: https://bdjacques.shinyapps.io/app-1/
+when: 1617546871.42711
