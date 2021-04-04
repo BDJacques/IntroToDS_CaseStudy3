@@ -180,8 +180,7 @@ server <- function(input, output, session) {
     
     tSet = t[rows, c(input$xCor, input$yCor, "Name")]
     corr_T = cor(tSet[, 1], tSet[, 2])
-    print(corr_T)
-    
+
     set.seed(5478)
     splitT = caret::createDataPartition(tSet[, 1], p = 0.8, list=F, times=1)
     training_tSet = tSet[splitT, ]
@@ -189,7 +188,6 @@ server <- function(input, output, session) {
     test_tSet = tSet[!row.names(tSet) %in% row.names(training_tSet), ]
     test_tSet = tSet[-splitT, ]
     
-    print(training_tSet)
     f = as.formula(paste(colnames(training_tSet)[1], colnames(training_tSet)[2], sep = " ~ "))
     lr_tSet = lm(formula = f, data = training_tSet)
     #lr_tSet = lm(colnames(training_tSet)[1] ~ colnames(training_tSet)[2], data = training_tSet)
@@ -222,7 +220,6 @@ server <- function(input, output, session) {
     sst_text = paste("Total Sum of Squares: ", SST)
     
     R2 = 1 - (PRESS/SST)
-    print(typeof(R2))
     r2_text = paste("R^2: ", R2)
     
     output$main_plot = plot2
