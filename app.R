@@ -20,7 +20,7 @@ t[] = lapply(t, convertNA)
 # Define UI for app that draws a histogram ----
 ui <- fluidPage(
   navbarPage(
-    "Lifetime Video Game Sales",
+    "Lifetime Video Game Sales by Brendan Jacques",
     id = "main_navbar",
     tabsetPanel(
       tabPanel("Data", 
